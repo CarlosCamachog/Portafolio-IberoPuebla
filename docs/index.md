@@ -1,14 +1,10 @@
-# Documentación del Proyecto
 
-Bienvenido 👋  
-Esta es una **plantilla** basada en [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) para cursos y proyectos.
+# Portafolio Ibero Puebla
 
----
+Bienvenido a mi portafolio de evidencias. Aquí publico tareas y proyectos.
 
-## Empezar rápido (3 pasos)
+- ✅ Documentación con **MkDocs + Material**
+- 📚 Evidencias por materia
+- 🧪 Proyectos y prácticas
 
-1. **Edita el nombre del sitio** en `mkdocs.yml`:
-   ```yaml
-   site_name: Documentación del Curso
-   theme:
-     name: material
+> Usa el menú de la izquierda para navegar.
