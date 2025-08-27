@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://carloscamachog.github.io/Portafolio-IberoPuebla/</loc>
+         <lastmod>2025-08-27</lastmod>
+    </url>
+    <url>
+         <loc>https://carloscamachog.github.io/Portafolio-IberoPuebla/comandos/</loc>
+         <lastmod>2025-08-27</lastmod>
+    </url>
+    <url>
+         <loc>https://carloscamachog.github.io/Portafolio-IberoPuebla/ejemplo/</loc>
+         <lastmod>2025-08-27</lastmod>
+    </url>
+    <url>
+         <loc>https://carloscamachog.github.io/Portafolio-IberoPuebla/gitcmds/</loc>
+         <lastmod>2025-08-27</lastmod>
+    </url>
+    <url>
+         <loc>https://carloscamachog.github.io/Portafolio-IberoPuebla/Tareas/tarea/</loc>
+         <lastmod>2025-08-27</lastmod>
+    </url>
 </urlset>
