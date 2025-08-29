@@ -1,7 +1,4 @@
-site_name: Plantilla para Documentación
-site_url: https://carloscamachog.github.io/Portafolio-IberoPuebla/
-repo_url: https://github.com/CarlosCamachog/Portafolio-IberoPuebla
-repo_name: Portafolio-IberoPuebla
+site_name: Portafolio Ibero Puebla
 theme:
   name: material
   language: es
@@ -11,50 +8,13 @@ theme:
   features:
     - navigation.instant
     - navigation.sections
-    - content.code.copy
-    - content.tooltips
 
-# 👇 Menú lateral (ajusta nombres/rutas si cambias archivos)
 nav:
   - Inicio: index.md
   - Tareas:
+      - Portada: Tareas/index.md
       - Tarea 1: Tareas/tarea1.md
-  - Ejemplo de Documentación del Proyecto: ejemplo.md
+      - Tarea 2: Tareas/tarea2.md
   - Recursos:
       - Comandos básicos de Git (primeros pasos): gitcmds.md
       - Comandos varios: comandos.md
-
-
-
-markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
-  - md_in_html
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-      clickable_checkbox: true
-  - pymdownx.blocks.caption
-  - toc:
-      permalink: true
-
-extra_css:
-  - https://use.fontawesome.com/releases/v6.5.2/css/all.css
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
-
-plugins:
-  - search
-

@@ -1,10 +1,12 @@
+# 📘 Portafolio Ibero Puebla
 
-# Portafolio Ibero Puebla
+¡Bienvenido a mi portafolio de evidencias!  
+Aquí encontrarás las tareas, proyectos y recursos que realizo en la carrera de Mecatrónica.
 
-Bienvenido a mi portafolio de evidencias. Aquí publico tareas y proyectos.
+---
 
-- ✅ Documentación con **MkDocs + Material**
-- 📚 Evidencias por materia
-- 🧪 Proyectos y prácticas
+## 📂 Contenido
+- [Tareas](Tareas/index.md) → Comparaciones, tablas y actividades entregables.  
+- **🚀 Proyectos:** prototipos y experimentos que voy desarrollando.  
+- **📚 Recursos:** apuntes, comandos y ejemplos útiles.
 
-> Usa el menú de la izquierda para navegar.
