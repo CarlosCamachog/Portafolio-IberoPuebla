@@ -388,13 +388,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contador-binario-de-4-bits-contador-binario-de-4-bits" class="md-nav__link">
+  <a href="#contador-binario-de-4-bits" class="md-nav__link">
     <span class="md-ellipsis">
-      Contador binario de 4 bits {#contador-binario-de-4-bits}
+      Contador binario de 4 bits
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Contador binario de 4 bits {#contador-binario-de-4-bits}">
+    <nav class="md-nav" aria-label="Contador binario de 4 bits">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -448,13 +448,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#barrido-de-leds-barrido-de-leds" class="md-nav__link">
+  <a href="#barrido-de-leds" class="md-nav__link">
     <span class="md-ellipsis">
-      Barrido de LEDs {#barrido-de-leds}
+      Barrido de LEDs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Barrido de LEDs {#barrido-de-leds}">
+    <nav class="md-nav" aria-label="Barrido de LEDs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -508,13 +508,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#secuencia-en-codigo-gray-secuencia-en-codigo-gray" class="md-nav__link">
+  <a href="#secuencia-en-codigo-gray" class="md-nav__link">
     <span class="md-ellipsis">
-      Secuencia en codigo Gray {#secuencia-en-codigo-gray}
+      Secuencia en codigo Gray
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Secuencia en codigo Gray {#secuencia-en-codigo-gray}">
+    <nav class="md-nav" aria-label="Secuencia en codigo Gray">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -715,13 +715,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contador-binario-de-4-bits-contador-binario-de-4-bits" class="md-nav__link">
+  <a href="#contador-binario-de-4-bits" class="md-nav__link">
     <span class="md-ellipsis">
-      Contador binario de 4 bits {#contador-binario-de-4-bits}
+      Contador binario de 4 bits
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Contador binario de 4 bits {#contador-binario-de-4-bits}">
+    <nav class="md-nav" aria-label="Contador binario de 4 bits">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -775,13 +775,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#barrido-de-leds-barrido-de-leds" class="md-nav__link">
+  <a href="#barrido-de-leds" class="md-nav__link">
     <span class="md-ellipsis">
-      Barrido de LEDs {#barrido-de-leds}
+      Barrido de LEDs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Barrido de LEDs {#barrido-de-leds}">
+    <nav class="md-nav" aria-label="Barrido de LEDs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -835,13 +835,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#secuencia-en-codigo-gray-secuencia-en-codigo-gray" class="md-nav__link">
+  <a href="#secuencia-en-codigo-gray" class="md-nav__link">
     <span class="md-ellipsis">
-      Secuencia en codigo Gray {#secuencia-en-codigo-gray}
+      Secuencia en codigo Gray
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Secuencia en codigo Gray {#secuencia-en-codigo-gray}">
+    <nav class="md-nav" aria-label="Secuencia en codigo Gray">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -918,11 +918,12 @@
 <li><a href="#secuencia-en-codigo-gray">Secuencia en codigo Gray</a>  </li>
 </ul>
 <hr />
-<h2 id="contador-binario-de-4-bits-contador-binario-de-4-bits">Contador binario de 4 bits {#contador-binario-de-4-bits}</h2>
+<h2 id="contador-binario-de-4-bits">Contador binario de 4 bits</h2>
 <h3 id="nombre-del-codigo">Nombre del código</h3>
 <p>Contador binario (4 bits)</p>
 <h3 id="que-debe-hacer">Qué debe hacer</h3>
-<p>En cuatro LEDs debe mostrarse cada segundo la representación binaria del 0 al 15.</p>
+<p>Este programa genera un contador binario ascendente de 4 bits.
+Los LEDs conectados muestran en tiempo real la representación binaria de los valores del 0 al 15, actualizándose cada 500 ms.</p>
 <h3 id="codigo">Código</h3>
 <pre><code class="language-c">#include &quot;pico/stdlib.h&quot;
 #include &quot;hardware/gpio.h&quot;
@@ -945,35 +946,99 @@ int main() {
 }
 </code></pre>
 <h3 id="esquematico-de-conexion">Esquemático de conexión</h3>
-<p><img alt="Esquemático de conexión" src="../../img/contador.png" /></p>
+<p><img alt="Esquemático del contador" src="../../img/Contador.svg" /></p>
 <h3 id="video">Video</h3>
-<p><em>(Aquí irá el enlace al video del funcionamiento)</em></p>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/aDn2G8YxF9o"
+frameborder="0" allowfullscreen></iframe>
+
 <hr />
-<h2 id="barrido-de-leds-barrido-de-leds">Barrido de LEDs {#barrido-de-leds}</h2>
+<h2 id="barrido-de-leds">Barrido de LEDs</h2>
 <h3 id="nombre-del-codigo_1">Nombre del código</h3>
 <p>Barrido de LEDs</p>
 <h3 id="que-debe-hacer_1">Qué debe hacer</h3>
-<p>Un “1” corre de LED0 → LED3 y luego regresa (0→1→2→3→2→1…).</p>
+<p>Se enciende un único LED a la vez en orden ascendente (0→1→2→3) y posteriormente en orden descendente (3→2→1→0), repitiendo indefinidamente la secuencia.</p>
 <h3 id="codigo_1">Código</h3>
-<pre><code class="language-c">// Aquí irá el código del barrido de LEDs
+<pre><code class="language-c">#include &quot;pico/stdli-b.h&quot;
+#include &quot;hardware/gpio.h&quot;
+
+#define A 0   
+#define B 1   
+#define C 2   
+#define D 3 
+#define E 4  
+
+int main() {
+    const uint32_t MASK = (1u&lt;&lt;A) | (1u&lt;&lt;B) | (1u&lt;&lt;C) | (1u&lt;&lt;D) | (1u&lt;&lt;E);
+
+    gpio_init_mask(MASK);
+    gpio_set_dir_out_masked(MASK);   
+    gpio_clr_mask(MASK);             
+
+    while (true) {
+
+        for (int i = 0; i &lt; 5; ++i) {
+            gpio_clr_mask(MASK);                
+            gpio_set_mask(1 &lt;&lt; i);              
+            sleep_ms(300);
+        }
+
+        for (int i = 3; i &gt; 0; --i) {
+            gpio_clr_mask(MASK);
+            gpio_set_mask(1 &lt;&lt; i);
+            sleep_ms(300);
+        }
+    }
+}
 </code></pre>
 <h3 id="esquematico-de-conexion_1">Esquemático de conexión</h3>
-<p><img alt="Esquemático de conexión" src="../img/barrido.png" /></p>
+<p><img alt="Esquemático de conexión" src="../../img/Barrido.svg" /></p>
 <h3 id="video_1">Video</h3>
-<p><em>(Aquí irá el enlace al video del funcionamiento)</em></p>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/biWVJNRUWUI"
+frameborder="0" allowfullscreen></iframe>
+
 <hr />
-<h2 id="secuencia-en-codigo-gray-secuencia-en-codigo-gray">Secuencia en codigo Gray {#secuencia-en-codigo-gray}</h2>
+<h2 id="secuencia-en-codigo-gray">Secuencia en codigo Gray</h2>
 <h3 id="nombre-del-codigo_2">Nombre del código</h3>
 <p>Secuencia en codigo Gray</p>
 <h3 id="que-debe-hacer_2">Qué debe hacer</h3>
-<p>En los LEDs se debe mostrar la secuencia de Gray, cambiando un bit por vez.</p>
+<p>En este programa se representa la secuencia de Gray de 3 bits.
+En cada transición únicamente cambia un bit del patrón de salida, lo que permite observar la principal característica del código Gray.
+El codigo convierte números binarios a Gray mediante la operación n ^ (n &gt;&gt; 1).</p>
 <h3 id="codigo_2">Código</h3>
-<pre><code class="language-c">// Aquí irá el código de la secuencia en código Gray
+<pre><code class="language-c">#include &quot;pico/stdlib.h&quot;
+#include &quot;hardware/gpio.h&quot;
+
+#define A 0
+#define B 1
+#define C 2
+
+uint8_t bin_gray(uint8_t num_dec) {
+    return num_dec ^ (num_dec &gt;&gt; 1);
+}
+
+int main() {
+    const uint8_t MASK = (1u &lt;&lt; A) | (1u &lt;&lt; B) | (1u &lt;&lt; C);
+
+    gpio_init_mask(MASK);
+    gpio_set_dir_masked(MASK, MASK);
+
+    while (true) {
+        for (uint8_t i = 0; i &lt; 8; i++) {
+            uint8_t gray = bin_gray(i);
+            gpio_put_masked(MASK, gray);
+            sleep_ms(500);
+        }
+    }
+}
 </code></pre>
 <h3 id="esquematico-de-conexion_2">Esquemático de conexión</h3>
-<p><img alt="Esquemático de conexión" src="../img/gray.png" /></p>
+<p><img alt="Esquemático de conexión" src="../../img/Codigo%20Gray.svg" /></p>
 <h3 id="video_2">Video</h3>
-<p><em>(Aquí irá el enlace al video del funcionamiento)</em></p>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/Q9hNYVJSGg4"
+frameborder="0" allowfullscreen></iframe>
 
 
 
