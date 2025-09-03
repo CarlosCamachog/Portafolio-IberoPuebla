@@ -8,7 +8,7 @@
 ## 1) Resumen
 
 - **Nombre del proyecto:** Inputs con lógica y máscaras  
-- **Autor:** Carlos  
+- **Autor:** Carlos Ernesto Camacho González 
 - **Curso / Asignatura:** Sistemas Embebidos  
 - **Fecha:** 02/09/2025  
 - **Descripción breve:** Se leen botones **pull-up** (presionado=0) para generar salidas en LEDs usando **operadores lógicos** y **máscaras**. Se implementa antirrebote por **detección de flanco**.
@@ -215,8 +215,6 @@ int main(void) {
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
   </iframe>
 </div>
-
-<p><a href="https://www.youtube.com/watch?v=CvLY-u6OfzA" target="_blank" rel="noopener">Abrir en YouTube</a></p>
 
 
 ## 5) Resultados y conclusiones

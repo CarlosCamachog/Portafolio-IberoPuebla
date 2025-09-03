@@ -7,7 +7,7 @@
 ## 1) Resumen
 
 - **Nombre del proyecto:** Outputs básicos con lógica y máscaras  
-- **Autor:** Carlos  
+- **Autor:** Carlos Ernesto Camacho González 
 - **Curso / Asignatura:** Sistemas Embebidos  
 - **Fecha:** 02/09/2025  
 - **Descripción breve:** Implementación de patrones de salida con GPIO usando **máscaras**: contador de 4 bits, barrido tipo “ping-pong” y generación de **código Gray**.

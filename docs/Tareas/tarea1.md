@@ -7,7 +7,7 @@
 ## 1) Resumen
 
 - **Nombre del proyecto:** Comparación y ranking de microcontroladores  
-- **Autor:** Carlos  
+- **Autor:** Carlos Ernesto Camacho González
 - **Curso / Asignatura:** Sistemas Embebidos  
 - **Fecha:** 02/09/2025  
 - **Descripción breve:** Se comparan ESP32, STM32F103C8T6, RP2040 y ATmega328P en periféricos, memoria, ecosistema, costo y rendimiento para proponer un **ranking** de uso recomendado.
