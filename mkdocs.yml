@@ -7,14 +7,23 @@ theme:
       primary: red
   features:
     - navigation.instant
-    - navigation.sections
+    - navigation.indexes     # mantiene 'Tareas' clicable si hay Tareas/index.md
+    # OJO: sin navigation.sections
+    # y sin navigation.expand (para que no se abran todas por defecto)
 
 nav:
   - Inicio: index.md
   - Tareas:
-      - Portada: Tareas/index.md
-      - Tarea 1: Tareas/tarea1.md
-      - Tarea 2: Tareas/tarea2.md
-  - Recursos:
-      - Comandos básicos de Git (primeros pasos): gitcmds.md
-      - Comandos varios: comandos.md
+      - "Tareas/index.md"
+      - "Tareas/tarea1.md"
+      - "Tareas/tarea2.md"
+      - "Tareas/tarea3.md"
+  - Proyecto de ingeniería v:
+      - "Proyecto de ingenieria v/ejemplo.md"
+
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+
