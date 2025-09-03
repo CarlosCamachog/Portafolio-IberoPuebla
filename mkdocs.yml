@@ -4,7 +4,7 @@ theme:
   language: es
   palette:
     - scheme: default
-      primary: cyan
+      primary: red
   features:
     - navigation.instant
     - navigation.indexes     # mantiene 'Tareas' clicable si hay Tareas/index.md
@@ -13,7 +13,7 @@ theme:
 
 nav:
   - Inicio: index.md
-  - Sistemas embebidos I:
+  - Sistemas Embebidos I:
       - "Tareas/index.md"
       - "Tareas/tarea1.md"
       - "Tareas/tarea2.md"

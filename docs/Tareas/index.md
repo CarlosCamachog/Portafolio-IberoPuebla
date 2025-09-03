@@ -1,7 +1,7 @@
 # 🗂️ Sistemas embebidos I — Portada
 
 Bienvenido a la sección de **Sistemas embebidos I** del portafolio.  
-Aquí recopilo prácticas y mini-proyectos con **Raspberry Pi Pico / ESP32 / STM32**.
+Aquí recopilo prácticas con **Raspberry Pi Pico 2**.
 
 ---
 

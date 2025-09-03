@@ -222,5 +222,3 @@ int main(void) {
 - Las compuertas AND/OR/XOR se implementan directamente con operadores lógicos, cumpliendo “sin enumerar combinaciones”.
 
 - El selector cíclico usa máscaras para encender exactamente un LED.
-
-> Próximos pasos: añadir debounce con tiempo mínimo o interrupciones, y mostrar el índice actual por UART o en una pantalla.
