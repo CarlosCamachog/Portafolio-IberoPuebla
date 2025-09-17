@@ -18,8 +18,11 @@ nav:
       - "Tareas/tarea1.md"
       - "Tareas/tarea2.md"
       - "Tareas/tarea3.md"
+      - "Tareas/tarea4.md"
+      - "Tareas/tarea5.md"
+      - "Tareas/tarea6.md"
   - Proyecto de ingeniería v:
-      - "Proyecto de ingenieria v/ejemplo.md"
+      - "Proyecto de ingenieria IV/ejemplo.md"
 
 markdown_extensions:
   - admonition
