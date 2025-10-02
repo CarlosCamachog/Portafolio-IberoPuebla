@@ -111,18 +111,29 @@ int main(void) {
         sleep_ms(10);
     }
 }
+
 ~~~
+
+### Esquemático de conexión AND
+![Esquemático de la compuerta AND](../img/AND.svg)
+
 ### Compuerta AND
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/YPkeRtyKr-c"
 title="Compuerta AND - demostración"
 frameborder="0" allowfullscreen></iframe>
 
+### Esquemático de conexión OR
+![Esquemático de la compuerta OR](../img/OR.svg)
+
 ### Compuerta OR
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/lDJKUnqY8gc"
 title="Compuerta OR - demostración"
 frameborder="0" allowfullscreen></iframe>
+
+### Esquemático de conexión XOR
+![Esquemático de la compuerta AND](../img/XOR.svg)
 
 ### Compuerta XOR
 <iframe width="560" height="315"

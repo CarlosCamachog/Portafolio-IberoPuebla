@@ -21,8 +21,12 @@ nav:
       - "Tareas/tarea4.md"
       - "Tareas/tarea5.md"
       - "Tareas/tarea6.md"
+      - "Tareas/tarea7.md"
+      - "Tareas/Examen.md"
+
   - Proyecto de ingeniería v:
       - "Proyecto de ingenieria IV/ejemplo.md"
+      - Diagrama de Gantt: "Proyecto de ingenieria IV/digramadegantt.md"
 
 markdown_extensions:
   - admonition
