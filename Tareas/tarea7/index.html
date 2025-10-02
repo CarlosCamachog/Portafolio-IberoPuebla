@@ -1,0 +1,1097 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tarea6/">
+      
+      
+        <link rel="next" href="../Examen/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>📘 Tarea 7 — PWM - Portafolio Ibero Puebla</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tarea-7-pwm" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Portafolio Ibero Puebla" class="md-header__button md-logo" aria-label="Portafolio Ibero Puebla" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portafolio Ibero Puebla
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📘 Tarea 7 — PWM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Portafolio Ibero Puebla" class="md-nav__button md-logo" aria-label="Portafolio Ibero Puebla" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Portafolio Ibero Puebla
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Sistemas Embebidos I
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sistemas Embebidos I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 1 — Comparación y ranking de microcontroladores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 2 — Outputs básicos con lógica y máscaras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 3 — Inputs con lógica y máscaras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 4 — Mini-Pong con ISR (5 LEDs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 5 — Ejercicios de medicion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 6 — Ejercicios de Programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    📘 Tarea 7 — PWM
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🎮 Reto — Simón Dice (4 colores) · Raspberry Pi Pico 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Proyecto de ingeniería v
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Proyecto de ingeniería v
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proyecto%20de%20ingenieria%20IV/ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Citizen Quack — Solución de calidad del agua
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Proyecto%20de%20ingenieria%20IV/digramadegantt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de Gantt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tarea-7-pwm">📘 Tarea 7 — PWM</h1>
+<hr />
+<h1 id="tarea-71-control-de-duty-cycle-motor-dc">🎵 Tarea 7.1 - Control de Duty Cycle — Motor DC</h1>
+<hr />
+<h2 id="1-resumen">1) Resumen</h2>
+<ul>
+<li><strong>Nombre del subproyecto:</strong> Control PWM de motor DC con 3 velocidades  </li>
+<li><strong>Autor:</strong> Carlos Ernesto Camacho González  </li>
+<li><strong>Curso / Asignatura:</strong> Sistemas Embebidos  </li>
+<li><strong>Fecha:</strong> 16/09/2025  </li>
+<li><strong>Descripción breve:</strong>  </li>
+<li>Controlar un <strong>motor DC</strong> mediante <strong>PWM</strong> variando el <strong>duty cycle</strong>.  </li>
+<li><strong>Dos botones</strong> seleccionan <strong>tres velocidades predefinidas</strong>: baja, media y alta.  </li>
+<li>Se documentan <strong>valores de duty</strong>, <strong>circuito</strong> y <strong>código</strong>.  </li>
+</ul>
+<blockquote>
+<p><strong>Nota de seguridad:</strong> El microcontrolador <strong>no</strong> entrega corriente suficiente para un motor. Debe usarse un <strong>driver/puente H</strong> (p. ej., DRV8833, TB6612FNG o L298N) con <strong>fuente para el motor</strong> y <strong>GND común</strong> con el micro.</p>
+</blockquote>
+<hr />
+<h2 id="2-objetivos">2) Objetivos</h2>
+<ul>
+<li>Comprender cómo el <strong>duty cycle</strong> del PWM regula la <strong>velocidad</strong> del motor DC.  </li>
+<li>Implementar una <strong>interfaz simple</strong> con dos botones para seleccionar <strong>tres velocidades</strong>.  </li>
+<li>Configurar correctamente el <strong>hardware PWM</strong> en RP2350/Pico 2 (frecuencia, <code>wrap</code>, <code>clkdiv</code>).  </li>
+</ul>
+<hr />
+<h2 id="3-conceptos-clave">3) Conceptos clave</h2>
+<ul>
+<li><strong>PWM (Modulación por Ancho de Pulso):</strong> controla la <strong>tensión media</strong> aplicada al motor.  </li>
+<li><strong>Frecuencia PWM:</strong> se usa <strong>2 kHz</strong> (estable). Para evitar zumbido audible, se puede usar <strong>20 kHz</strong> si el driver lo soporta.  </li>
+<li><strong>Duty predefinido:</strong>  </li>
+<li><strong>Baja ≈ 30%</strong>, <strong>Media ≈ 60%</strong>, <strong>Alta ≈ 90%</strong>. Balance entre arranque, par y ruido.</li>
+</ul>
+<h2 id="4-codigo">4) Código</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/pwm.h&quot;</span>
+
+
+<span class="cp">#define MOTOR_PWM_PIN   0   </span><span class="c1">// salida PWM al driver (IN1)</span>
+<span class="cp">#define BTN_UP          1   </span><span class="c1">// subir velocidad</span>
+<span class="cp">#define BTN_DOWN        2   </span><span class="c1">// bajar velocidad</span>
+<span class="cp">#define MOTOR_DIR_PIN   3   </span><span class="c1">// dirección (IN2) fija = 1</span>
+
+<span class="c1">//  Configuración PWM </span>
+<span class="cp">#define F_PWM_HZ 2000       </span><span class="c1">// 2 kHz </span>
+<span class="cp">#define TOP      1023       </span><span class="c1">// 10 bits de resolución (0..1023)</span>
+<span class="cp">#define DEBOUNCE_MS 150</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// PWM en pin MOTOR_PWM_PIN</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">MOTOR_PWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_PWM</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Dirección fija a 1 (un solo sentido)</span>
+<span class="w">    </span><span class="n">gpio_init</span><span class="p">(</span><span class="n">MOTOR_DIR_PIN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_set_dir</span><span class="p">(</span><span class="n">MOTOR_DIR_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_OUT</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_put</span><span class="p">(</span><span class="n">MOTOR_DIR_PIN</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Botones con pull-up (activo-bajo)</span>
+<span class="w">    </span><span class="n">gpio_init</span><span class="p">(</span><span class="n">BTN_UP</span><span class="p">);</span><span class="w">    </span><span class="n">gpio_set_dir</span><span class="p">(</span><span class="n">BTN_UP</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_IN</span><span class="p">);</span><span class="w">    </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">BTN_UP</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gpio_init</span><span class="p">(</span><span class="n">BTN_DOWN</span><span class="p">);</span><span class="w">  </span><span class="n">gpio_set_dir</span><span class="p">(</span><span class="n">BTN_DOWN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_IN</span><span class="p">);</span><span class="w">  </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">BTN_DOWN</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Configurar hardware PWM</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_slice_num</span><span class="p">(</span><span class="n">MOTOR_PWM_PIN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">chan</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_channel</span><span class="p">(</span><span class="n">MOTOR_PWM_PIN</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">f_clk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">125000000.0f</span><span class="p">;</span><span class="w"> </span><span class="c1">// 125 MHz</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">clkdiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_clk</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">F_PWM_HZ</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">TOP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">    </span><span class="n">pwm_set_clkdiv</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">clkdiv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pwm_set_wrap</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">TOP</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">duty_levels</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)(</span><span class="mf">0.30f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TOP</span><span class="p">),</span><span class="w">  </span><span class="c1">// Baja  </span>
+<span class="w">        </span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)(</span><span class="mf">0.60f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TOP</span><span class="p">),</span><span class="w">  </span><span class="c1">// Media </span>
+<span class="w">        </span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)(</span><span class="mf">0.90f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TOP</span><span class="p">)</span><span class="w">   </span><span class="c1">// Alta  </span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">speed_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Iniciar PWM con velocidad &quot;Baja&quot;</span>
+<span class="w">    </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="n">duty_levels</span><span class="p">[</span><span class="n">speed_level</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">pwm_set_enabled</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// BTN_UP: siguiente velocidad</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">gpio_get</span><span class="p">(</span><span class="n">BTN_UP</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed_level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">speed_level</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="n">duty_levels</span><span class="p">[</span><span class="n">speed_level</span><span class="p">]);</span>
+<span class="w">            </span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">DEBOUNCE_MS</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Espera a soltar para evitar autorepetición rápida</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">gpio_get</span><span class="p">(</span><span class="n">BTN_UP</span><span class="p">))</span><span class="w"> </span><span class="n">tight_loop_contents</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// BTN_DOWN: velocidad previa</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">gpio_get</span><span class="p">(</span><span class="n">BTN_DOWN</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed_level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">speed_level</span><span class="o">--</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="n">duty_levels</span><span class="p">[</span><span class="n">speed_level</span><span class="p">]);</span>
+<span class="w">            </span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">DEBOUNCE_MS</span><span class="p">);</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">gpio_get</span><span class="p">(</span><span class="n">BTN_DOWN</span><span class="p">))</span><span class="w"> </span><span class="n">tight_loop_contents</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="5-video-de-demostracion">5) Video de demostracion</h2>
+<h2 id="video">video</h2>
+<p><iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/8ufet_8OE6A"
+  title="Control motor DC - demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  style="border:0;">
+</iframe>
+</p>
+<hr />
+<h2 id="6-esquematico-de-conexion">6) Esquemático de conexión</h2>
+<p><img alt="Esquemático — Driver de motor + Pico 2" src="../img/motor_pwm.svg" /><br />
+<em>Figura 1. Conexión sugerida (referencial).</em></p>
+<hr />
+<h2 id="7-resultados-y-conclusiones">7) Resultados y conclusiones</h2>
+<ul>
+<li>
+<p>Con 30/60/90% se observan claramente tres regímenes de velocidad.</p>
+</li>
+<li>
+<p>Antirrebote bloqueante (150 ms).</p>
+</li>
+<li>
+<p>Usar driver dedicado y GND común garantiza estabilidad y protege al microcontrolador.</p>
+</li>
+</ul>
+<h1 id="tarea-72-control-de-frecuencia-cancion-con-buzzer">🎵 Tarea 7.2 — Control de Frecuencia: Canción con Buzzer</h1>
+<hr />
+<h2 id="1-resumen_1">1) Resumen</h2>
+<ul>
+<li><strong>Entregable:</strong> Programar un <strong>buzzer piezoeléctrico</strong> para reproducir una <strong>melodía reconocible</strong> (intro de <strong>Pac-Man</strong>).  </li>
+<li><strong>Técnica:</strong> Variar la <strong>frecuencia del PWM</strong> para cada nota; <strong>duty = 50%</strong>.  </li>
+<li><strong>Documentar:</strong> Tabla con <strong>notas/frecuencias/duración</strong> y <strong>evidencia</strong> (audio/video).  </li>
+<li><strong>Recomendación:</strong> Los buzzer piezo suenan mejor ~<strong>532 Hz–4 kHz</strong>. Se usan notas en una octava que cae en ese rango.</li>
+</ul>
+<hr />
+<h2 id="2-codigo">2) Código</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/pwm.h&quot;</span>
+
+<span class="cp">#define BUZZER_PIN 0</span>
+
+<span class="cp">#define TOP 1023        </span><span class="c1">// Resolución (10 bits)</span>
+<span class="cp">#define TEMPO 190       </span><span class="c1">// Tempo rápido</span>
+
+<span class="c1">// Duraciones de nota</span>
+<span class="cp">#define NEGRA        (60000 / TEMPO)</span>
+<span class="cp">#define CORCHEA      (NEGRA / 2)</span>
+<span class="cp">#define SEMICORCHEA  (NEGRA / 4)</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">BUZZER_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_PWM</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_slice_num</span><span class="p">(</span><span class="n">BUZZER_PIN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">chan</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_channel</span><span class="p">(</span><span class="n">BUZZER_PIN</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">pwm_set_wrap</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">TOP</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// empezar en silencio</span>
+<span class="w">    </span><span class="n">pwm_set_enabled</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Pac-Man (intro + intermisión)</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">frecuencias</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Intro</span>
+<span class="w">        </span><span class="mf">987.77</span><span class="p">,</span><span class="w"> </span><span class="mf">1479.98</span><span class="p">,</span><span class="w"> </span><span class="mf">1244.51</span><span class="p">,</span><span class="w"> </span><span class="mf">987.77</span><span class="p">,</span><span class="w"> </span><span class="mf">1479.98</span><span class="p">,</span><span class="w"> </span><span class="mf">1244.51</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">1046.50</span><span class="p">,</span><span class="w"> </span><span class="mf">1567.98</span><span class="p">,</span><span class="w"> </span><span class="mf">1318.51</span><span class="p">,</span><span class="w"> </span><span class="mf">1046.50</span><span class="p">,</span><span class="w"> </span><span class="mf">1567.98</span><span class="p">,</span><span class="w"> </span><span class="mf">1318.51</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">987.77</span><span class="p">,</span><span class="w"> </span><span class="mf">880.00</span><span class="p">,</span><span class="w"> </span><span class="mf">783.99</span><span class="p">,</span><span class="w"> </span><span class="mf">698.46</span><span class="p">,</span><span class="w"> </span><span class="mf">622.25</span><span class="p">,</span><span class="w"> </span><span class="mf">587.33</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Intermisión</span>
+<span class="w">        </span><span class="mf">783.99</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">880.00</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">987.77</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">783.99</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">987.77</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1046.50</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1174.66</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">987.77</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">1174.66</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1244.51</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1318.51</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1174.66</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">duraciones</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Intro</span>
+<span class="w">        </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span>
+<span class="w">        </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span>
+<span class="w">        </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">NEGRA</span><span class="p">,</span><span class="w"> </span><span class="n">NEGRA</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Intermisión</span>
+<span class="w">        </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">NEGRA</span><span class="p">,</span>
+<span class="w">        </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">NEGRA</span><span class="p">,</span>
+<span class="w">        </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">CORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">SEMICORCHEA</span><span class="p">,</span><span class="w"> </span><span class="n">NEGRA</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">frecuencias</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">frecuencias</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num_notas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">frecuencias</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Para RP2350 el sysclk típico es 150 MHz; si usas RP2040 usa 125 MHz</span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">f_clk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150000000.0f</span><span class="p">;</span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_clk</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">frecuencias</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">TOP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">                </span><span class="n">pwm_set_clkdiv</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">div</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="n">TOP</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50% duty</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// silencio (pausa)</span>
+<span class="w">                </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duraciones</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Pausa entre repeticiones</span>
+<span class="w">        </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="3-tabla-de-notas-usadas-referencia">3) Tabla de notas usadas (referencia)</h2>
+<table>
+<thead>
+<tr>
+<th>Nota (aprox)</th>
+<th style="text-align: right;">Frec. (Hz)</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B5</td>
+<td style="text-align: right;">987.77</td>
+<td>Inicio característico</td>
+</tr>
+<tr>
+<td>F♯6</td>
+<td style="text-align: right;">1479.98</td>
+<td>Agudo brillante</td>
+</tr>
+<tr>
+<td>D♯6 / E♭6</td>
+<td style="text-align: right;">1244.51</td>
+<td></td>
+</tr>
+<tr>
+<td>C6</td>
+<td style="text-align: right;">1046.50</td>
+<td></td>
+</tr>
+<tr>
+<td>G6</td>
+<td style="text-align: right;">1567.98</td>
+<td></td>
+</tr>
+<tr>
+<td>E6</td>
+<td style="text-align: right;">1318.51</td>
+<td></td>
+</tr>
+<tr>
+<td>A5</td>
+<td style="text-align: right;">880.00</td>
+<td></td>
+</tr>
+<tr>
+<td>G5</td>
+<td style="text-align: right;">783.99</td>
+<td></td>
+</tr>
+<tr>
+<td>F5</td>
+<td style="text-align: right;">698.46</td>
+<td></td>
+</tr>
+<tr>
+<td>D♯5 / E♭5</td>
+<td style="text-align: right;">622.25</td>
+<td></td>
+</tr>
+<tr>
+<td>D5</td>
+<td style="text-align: right;">587.33</td>
+<td></td>
+</tr>
+<tr>
+<td>D6</td>
+<td style="text-align: right;">1174.66</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Tip:</strong> si escuchas distorsión, sube la <strong>frecuencia PWM</strong> manteniendo el <strong>duty 50%</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="4-evidencias">4) Evidencias</h2>
+<h3 id="video-audio">Video / Audio</h3>
+<p><iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/my9hqDEfWbQ"
+  title="Control motor DC - demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  style="border:0;">
+</iframe>
+</p>
+<h2 id="5-esquematico-de-conexion">5) Esquemático de conexión</h2>
+<p><img alt="Esquemático — Driver de motor + Pico 2" src="../img/motor_pwm.svg" /><br />
+<em>Figura 1. Conexión sugerida (referencial).</em></p>
+<hr />
+<h2 id="6-conclusiones-tarea-72">6) Conclusiones (Tarea 7.2)</h2>
+<ul>
+<li>La melodía se logra <strong>variando la frecuencia</strong> del PWM con <strong>duty fijo</strong> (50%).  </li>
+<li>Mantener el rango <strong>~532 Hz–4 kHz</strong> asegura buena respuesta del buzzer piezo.  </li>
+<li>Ajustar <strong>clkdiv</strong> en tiempo real permite notas <strong>afinadas</strong> sin bloquear otros procesos.</li>
+</ul>
+<hr />
+<h1 id="tarea-73-generacion-de-senales-senoidal-de-60-hz-con-pwm-filtro-rc">🛠️ Tarea 7.3 — Generación de Señales: Senoidal de 60 Hz con PWM + Filtro RC</h1>
+<hr />
+<h2 id="1-resumen_2">1) Resumen</h2>
+<ul>
+<li><strong>Nombre del proyecto:</strong> Señal senoidal con PWM y filtrado RC  </li>
+<li><strong>Autor:</strong> Carlos Ernesto Camacho González  </li>
+<li><strong>Curso / Asignatura:</strong> Sistemas Embebidos  </li>
+<li><strong>Fecha:</strong> 16/09/2025  </li>
+<li><strong>Descripción breve:</strong>  </li>
+<li>Generar una <strong>señal sinusoidal de 60 Hz</strong> aproximada mediante <strong>PWM</strong> variando el duty cycle con una tabla seno.  </li>
+<li>Filtrar la señal usando un <strong>filtro RC pasabajos</strong> para obtener una forma senoidal limpia en el osciloscopio.  </li>
+<li>Documentar capturas de <strong>PWM sin filtrar</strong> y <strong>señal filtrada</strong>.</li>
+</ul>
+<hr />
+<h2 id="2-objetivos_1">2) Objetivos</h2>
+<ul>
+<li>Implementar una <strong>tabla seno</strong> para modular el duty cycle del PWM.  </li>
+<li>Usar un <strong>filtro RC</strong> que atenúe las componentes de alta frecuencia y deje pasar los 60 Hz.  </li>
+<li>Verificar la señal en osciloscopio <strong>antes</strong> y <strong>después</strong> del filtro.</li>
+</ul>
+<hr />
+<h2 id="3-conceptos-clave_1">3) Conceptos clave</h2>
+<h3 id="senal-senoidal-con-pwm">Señal senoidal con PWM</h3>
+<p>El microcontrolador genera una onda PWM cuyo duty cycle sigue la forma de una tabla seno. Tras el filtrado RC, se obtiene una onda analógica.</p>
+<h2 id="4-codigo_1">4) Código</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/pwm.h&quot;</span>
+
+<span class="cp">#define SENAL 0          </span><span class="c1">// Pin GPIO de salida</span>
+<span class="cp">#define TOP 1023         </span><span class="c1">// Resolución del PWM (10 bits)</span>
+<span class="cp">#define FREQ 60          </span><span class="c1">// Frecuencia de la señal senoidal deseada (Hz)</span>
+<span class="cp">#define TAMANO_SENO 100  </span><span class="c1">// Número de puntos en la tabla seno</span>
+
+<span class="c1">// Tabla seno (se llenará en tiempo de ejecución)</span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="n">TABLA_SENO</span><span class="p">[</span><span class="n">TAMANO_SENO</span><span class="p">];</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Llenar tabla seno con valores escalados a [0, TOP]</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">TAMANO_SENO</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">RAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">TAMANO_SENO</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">RAD</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// normalizada a 0–1</span>
+<span class="w">        </span><span class="n">TABLA_SENO</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)(</span><span class="n">VAL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TOP</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Configurar pin PWM</span>
+<span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">SENAL</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_PWM</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_slice_num</span><span class="p">(</span><span class="n">SENAL</span><span class="p">);</span>
+<span class="w">    </span><span class="n">uint</span><span class="w"> </span><span class="n">chan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pwm_gpio_to_channel</span><span class="p">(</span><span class="n">SENAL</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">pwm_set_wrap</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">TOP</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pwm_set_enabled</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Calcular frecuencia de actualización de la LUT</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FREQ</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TAMANO_SENO</span><span class="p">;</span><span class="w">      </span><span class="c1">// actualizaciones/segundo</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">delay_us</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000000.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">RATE</span><span class="p">;</span><span class="w">  </span><span class="c1">// periodo en µs</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">INDEX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pwm_set_chan_level</span><span class="p">(</span><span class="n">slice</span><span class="p">,</span><span class="w"> </span><span class="n">chan</span><span class="p">,</span><span class="w"> </span><span class="n">TABLA_SENO</span><span class="p">[</span><span class="n">INDEX</span><span class="p">]);</span>
+
+<span class="w">        </span><span class="n">INDEX</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">INDEX</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">TAMANO_SENO</span><span class="p">)</span><span class="w"> </span><span class="n">INDEX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">sleep_us</span><span class="p">(</span><span class="n">delay_us</span><span class="p">);</span><span class="w">  </span><span class="c1">// Ajusta la frecuencia</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="5-evidencias">5) Evidencias</h2>
+<h3 id="osciloscopio">Osciloscopio</h3>
+<ul>
+<li><strong>Antes del filtro (PWM):</strong> señal rectangular con duty variable.  </li>
+<li><strong>Después del filtro RC:</strong> onda senoidal de <strong>60 Hz</strong> más limpia.  </li>
+</ul>
+<p><img alt="Captura — PWM sin filtro" src="../../img/Sinfiltro.jpeg" /><br />
+<em>Figura 1. Señal PWM cruda.</em>  </p>
+<p><img alt="Captura — Señal filtrada" src="../../img/Confiltro.jpeg" /><br />
+<em>Figura 2. Señal senoidal tras el filtro RC.</em>  </p>
+<hr />
+<h2 id="6-resultados-y-conclusiones">6) Resultados y conclusiones</h2>
+<ul>
+<li>El PWM con duty modulado por tabla seno reproduce correctamente la forma senoidal.  </li>
+<li>El <strong>filtro RC</strong> atenúa los armónicos de alta frecuencia y deja pasar los <strong>60 Hz</strong>.  </li>
+<li>Ajustar <strong>R y C</strong> permite modificar la <strong>frecuencia de corte</strong> para un mejor compromiso entre limpieza de señal y amplitud.  </li>
+<li>Se logró una <strong>señal analógica senoidal</strong> a partir de un pin digital del microcontrolador.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
