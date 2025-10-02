@@ -1,4 +1,4 @@
-# 🕹️ Tarea 4 — Mini-Pong con ISR (5 LEDs)
+# 📘 Tarea 4 — Mini-Pong con ISR (5 LEDs)
 
 ## Nombre del código
 Mini-Pong ISR (5 LEDs, 2 botones, RP2040)

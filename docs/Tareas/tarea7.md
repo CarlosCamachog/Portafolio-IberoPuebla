@@ -1,8 +1,10 @@
-# 🛠️ Tarea 7 — Control de Duty Cycle: Motor DC
+# 📘 Tarea 7 — PWM
+---
+# 🎵 Tarea 7.1 - Control de Duty Cycle — Motor DC
 ---
 
 ## 1) Resumen
-- **Nombre del proyecto:** Control PWM de motor DC con 3 velocidades  
+- **Nombre del subproyecto:** Control PWM de motor DC con 3 velocidades  
 - **Autor:** Carlos Ernesto Camacho González  
 - **Curso / Asignatura:** Sistemas Embebidos  
 - **Fecha:** 16/09/2025  
@@ -29,7 +31,7 @@
   - **Baja ≈ 30%**, **Media ≈ 60%**, **Alta ≈ 90%**. Balance entre arranque, par y ruido.
 
 
-## 5) Código (C para RP2350/Pico 2)
+## 4) Código 
 
 ~~~c
 
@@ -102,15 +104,15 @@ int main(void) {
     }
 }
 ~~~
-## 6) Video de demostracion
+## 5) Video de demostracion
 
 ## video
 
 <iframe
   width="560"
   height="315"
-  src="https://youtube.com/shorts/8ufet_8OE6A?feature=share
-  title="Pong - demostración"
+  src="https://www.youtube.com/embed/8ufet_8OE6A"
+  title="Control motor DC - demo"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
@@ -119,7 +121,7 @@ int main(void) {
 
 ---
 
-## 7) Esquemático de conexión
+## 6) Esquemático de conexión
 
 ![Esquemático — Driver de motor + Pico 2](../img/motor_pwm.svg)  
 *Figura 1. Conexión sugerida (referencial).*
@@ -127,7 +129,7 @@ int main(void) {
 ---
 
 
-## 8) Resultados y conclusiones
+## 7) Resultados y conclusiones
 
 - Con 30/60/90% se observan claramente tres regímenes de velocidad.
 
@@ -146,7 +148,7 @@ int main(void) {
 
 ---
 
-## 2) Código (C para RP2350/Pico 2)
+## 2) Código 
 
 ~~~c
 #include "pico/stdlib.h"
@@ -248,13 +250,14 @@ int main() {
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/XXXXXXXXXXX"
-  title="Buzzer — Pac-Man Intro (demo)"
+  src="https://www.youtube.com/embed/my9hqDEfWbQ"
+  title="Control motor DC - demo"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
   style="border:0;">
 </iframe>
+
 
 ## 5) Esquemático de conexión
 
@@ -298,7 +301,7 @@ int main() {
 ### Señal senoidal con PWM
 El microcontrolador genera una onda PWM cuyo duty cycle sigue la forma de una tabla seno. Tras el filtrado RC, se obtiene una onda analógica.
 
-## 4) Código (C para RP2350/Pico 2)
+## 4) Código 
 
 ~~~c
 #include <stdio.h>
@@ -357,10 +360,10 @@ int main() {
 - **Antes del filtro (PWM):** señal rectangular con duty variable.  
 - **Después del filtro RC:** onda senoidal de **60 Hz** más limpia.  
 
-![Captura — PWM sin filtro](../img/seno_pwm.svg)  
+![Captura — PWM sin filtro](../img/Sinfiltro.jpeg)  
 *Figura 1. Señal PWM cruda.*  
 
-![Captura — Señal filtrada](../img/seno_filtrada.svg)  
+![Captura — Señal filtrada](../img/Confiltro.jpeg)  
 *Figura 2. Señal senoidal tras el filtro RC.*  
 
 ---
