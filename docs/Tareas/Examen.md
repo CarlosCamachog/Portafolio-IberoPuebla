@@ -1,4 +1,4 @@
-# 🎮 Reto — Simón Dice (4 colores) · Raspberry Pi Pico 2
+# 📘 Examen — Simón Dice (4 colores) · Raspberry Pi Pico 2
 
 > Juego de **memoria** con 4 LEDs y 4 botones en Raspberry Pi Pico 2 (**RP2350**), con **secuencia aleatoria** que crece por ronda, **tiempo límite** por entrada y **fallos** por botón incorrecto, por **dos pulsaciones simultáneas** o por **timeout**.  
 

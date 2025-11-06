@@ -26,9 +26,9 @@
 
 ## 3) Conceptos clave
 - **PWM (Modulación por Ancho de Pulso):** controla la **tensión media** aplicada al motor.  
-- **Frecuencia PWM:** se usa **2 kHz** (estable). Para evitar zumbido audible, se puede usar **20 kHz** si el driver lo soporta.  
+- **Frecuencia PWM:** se usa **2 kHz**. Para evitar zumbido audible
 - **Duty predefinido:**  
-  - **Baja ≈ 30%**, **Media ≈ 60%**, **Alta ≈ 90%**. Balance entre arranque, par y ruido.
+  - **Baja ≈ 30%**, **Media ≈ 60%**, **Alta ≈ 90%**.
 
 
 ## 4) Código 
@@ -123,8 +123,8 @@ int main(void) {
 
 ## 6) Esquemático de conexión
 
-![Esquemático — Driver de motor + Pico 2](../img/motor_pwm.svg)  
-*Figura 1. Conexión sugerida (referencial).*
+![Esquemático — Driver de motor + Pico 2](../img/motor.jpeg)  
+*Figura 1.*
 
 ---
 
@@ -261,8 +261,8 @@ int main() {
 
 ## 5) Esquemático de conexión
 
-![Esquemático — Driver de motor + Pico 2](../img/motor_pwm.svg)  
-*Figura 1. Conexión sugerida (referencial).*
+![Esquemático — Driver de motor + Pico 2](../img/buzzer.jpeg)  
+*Figura 2.*
 
 ---
 
@@ -353,22 +353,26 @@ int main() {
 ~~~
 
 ---
+## 5) Esquemático de conexión
 
-## 5) Evidencias
+![Esquemático — Driver de motor + Pico 2](../img/capacitor.jpeg)  
+*Figura 3.*
+
+---
+## 6) Evidencias
 
 ### Osciloscopio
 - **Antes del filtro (PWM):** señal rectangular con duty variable.  
 - **Después del filtro RC:** onda senoidal de **60 Hz** más limpia.  
 
 ![Captura — PWM sin filtro](../img/Sinfiltro.jpeg)  
-*Figura 1. Señal PWM cruda.*  
+*Figura 4. Señal PWM *  
 
 ![Captura — Señal filtrada](../img/Confiltro.jpeg)  
-*Figura 2. Señal senoidal tras el filtro RC.*  
+*Figura 5. Señal senoidal tras el filtro RC.*  
 
 ---
-
-## 6) Resultados y conclusiones
+## 7) Resultados y conclusiones
 - El PWM con duty modulado por tabla seno reproduce correctamente la forma senoidal.  
 - El **filtro RC** atenúa los armónicos de alta frecuencia y deja pasar los **60 Hz**.  
 - Ajustar **R y C** permite modificar la **frecuencia de corte** para un mejor compromiso entre limpieza de señal y amplitud.  

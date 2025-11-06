@@ -12,8 +12,8 @@ Soy **Carlos Ernesto Camacho González**, estudiante de **Mecatrónica** en **Ib
 
 ## Contenido
 
-- **[Tareas](Tareas/index.md)** — comparaciones y prácticas de GPIO, lógica y máscaras.  
-- **[Proyecto de ingeniería V](Proyecto de ingenieria v/index.md)** — objetivo, alcance, avances y entregables.  
+- **[Tareas](Tareas/index.md)** 
+- **[Proyecto de ingeniería V](Proyecto de ingenieria v/index.md)** 
 
 ---
 

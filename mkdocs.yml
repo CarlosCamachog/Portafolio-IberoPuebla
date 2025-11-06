@@ -1,15 +1,31 @@
 site_name: Portafolio Ibero Puebla
+
 theme:
   name: material
   language: es
   palette:
+    # Claro
     - scheme: default
-      primary: red
+      primary: indigo        # ← color principal (navbar, botones, etc.)
+      accent: pink           # ← color de énfasis (links activos, detalles)
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    # Oscuro
+    - scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
   features:
-    - navigation.instant
-    - navigation.indexes     # mantiene 'Tareas' clicable si hay Tareas/index.md
-    # OJO: sin navigation.sections
-    # y sin navigation.expand (para que no se abran todas por defecto)
+    - navigation.indexes
+
+nav:
+  # ... tu menú ...
+
+
 
 nav:
   - Inicio: index.md
@@ -22,11 +38,25 @@ nav:
       - "Tareas/tarea5.md"
       - "Tareas/tarea6.md"
       - "Tareas/tarea7.md"
+      - "Tareas/tarea8.md"
+      - "Tareas/tarea9.md"
       - "Tareas/Examen.md"
+  - Proyecto de ingeniería IV:
+      - Semana 1: "proyecto-ingenieria-iv/semana-1.md"
+      - Semana 3: "proyecto-ingenieria-iv/semana-3.md"
+      - Semana 4: "proyecto-ingenieria-iv/semana-4.md"
+      - Semana 5: "proyecto-ingenieria-iv/semana-5.md"
+      - Semana 6: "proyecto-ingenieria-iv/semana-6.md"
+      - Semana 7: "proyecto-ingenieria-iv/semana-7.md"
+      - Semana 8: "proyecto-ingenieria-iv/semana-8.md"
+      - Trello: "proyecto-ingenieria-iv/trello.md"
 
-  - Proyecto de ingeniería v:
-      - "Proyecto de ingenieria IV/ejemplo.md"
-      - Diagrama de Gantt: "Proyecto de ingenieria IV/digramadegantt.md"
+      
+
+ 
+
+      
+
 
 markdown_extensions:
   - admonition

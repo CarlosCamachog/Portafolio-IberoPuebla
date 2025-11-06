@@ -8,12 +8,22 @@ Aquí recopilo prácticas con **Raspberry Pi Pico 2**.
 ## Índice 
 
 - **[Tarea 1 — Comparación y ranking de microcontroladores](tarea1.md)**  
-  Tabla comparativa (ESP32, STM32F103, RP2040, ATmega328P) y **ranking** con recomendaciones.
 
 - **[Tarea 2 — Outputs básicos con lógica y máscaras](tarea2.md)**  
-  **Contador binario (4 bits)**, **barrido de LEDs** y **secuencia Gray** usando **máscaras**.
 
 - **[Tarea 3 — Inputs con lógica y máscaras](tarea3.md)**  
-  **AND / OR / XOR** con botones *pull-up* y **selector cíclico** con antirrebote por **flanco**.
+
+- **[Tarea 4 — Mini-Pong con ISR (5 LEDs)](tarea4.md)**  
+
+- **[Tarea 5 — Ejercicios de medicion ](tarea5.md)**  
+
+- **[Tarea 6 — Ejercicios de Programación](tarea6.md)**  
+
+- **[Tarea 7 — PWM](tarea7.md)**  
+
+- **[Tarea 8 — UART](tarea8.md)**  
+
+- **[Examen — Simón Dice (4 colores)](Examen.md)**  
+
 
 ---
