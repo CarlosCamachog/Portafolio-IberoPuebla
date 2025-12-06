@@ -4,14 +4,12 @@ theme:
   name: material
   language: es
   palette:
-    # Claro
     - scheme: default
-      primary: indigo        # ← color principal (navbar, botones, etc.)
-      accent: pink           # ← color de énfasis (links activos, detalles)
+      primary: indigo
+      accent: pink
       toggle:
         icon: material/weather-night
         name: Modo oscuro
-    # Oscuro
     - scheme: slate
       primary: indigo
       accent: pink
@@ -21,11 +19,6 @@ theme:
 
   features:
     - navigation.indexes
-
-nav:
-  # ... tu menú ...
-
-
 
 nav:
   - Inicio: index.md
@@ -50,13 +43,7 @@ nav:
       - Semana 7: "proyecto-ingenieria-iv/semana-7.md"
       - Semana 8: "proyecto-ingenieria-iv/semana-8.md"
       - Trello: "proyecto-ingenieria-iv/trello.md"
-
-      
-
- 
-
-      
-
+      - Proyecto Final: "proyecto-ingenieria-iv/ProyectoFinal.md"
 
 markdown_extensions:
   - admonition
