@@ -16,7 +16,7 @@ Nodo flotante con forma de pato que mide parámetros de calidad del agua (pH, te
 
 ## 5) Problema y motivación
 Monitoreo intermitente/manual de calidad de agua -> falta de datos en tiempo real para detección temprana de contaminación. Citizen Quack busca resolución con un sistema económico y escalable.
-g
+
 ## 6) Boceto / Recursos visuales
 - Boceto: `../img/citizen-quack-boceto.png`  
 - Presentación (Canva, embed/visual): https://www.canva.com/design/DAG5dyTq7m4/BNC3U07SQSMNoSyPcmzIfw/view?embed  
@@ -25,10 +25,9 @@ g
 
 ## 7) Entregables (ubicados en este mismo folder)
 - Documento final (PDF): [Descargar PDF](./entrega-final-proyecto-lanzamiento.pdf)  
-  (archivo subido al repositorio — verificar nombre exacto en el directorio)
 - Presentación: enlace de Canva arriba; si se requiere archivo local, subir exportación PDF/PPTX a este mismo directorio.
 
 ## 8) Siguientes pasos / notas cortas
 - Verificar que el PDF y la presentación estén versionados y comiteados.  
-- Añadir diagramas electrónicos, lista de materiales y plan de pruebas en próximas actualizaciones del repo.
+- Añadir diagramas electrónicos, lista de materiales y plan de pruebas en próximas actualizaciones del repo.  
 - Para publicar: confirmar que `../img/citizen-quack-boceto.png` y los PDFs estén en el control de versiones y luego hacer commit/push.
