@@ -35,6 +35,9 @@ nav:
       - "Tareas/tarea9.md"
       - "Tareas/Examen.md"
       - "Tareas/ProyectoFinal.md"
+  - Sistemas Embebidos II:
+      - Tarea 1: "Sistemas Embebidos II/tarea1.md"
+
   - Proyecto de ingeniería IV:
       - Semana 1: "proyecto-ingenieria-iv/semana-1.md"
       - Semana 3: "proyecto-ingenieria-iv/semana-3.md"
@@ -51,4 +54,3 @@ markdown_extensions:
   - tables
   - pymdownx.details
   - pymdownx.superfences
-
