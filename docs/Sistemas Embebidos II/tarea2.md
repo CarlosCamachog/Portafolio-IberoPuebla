@@ -49,7 +49,7 @@ Run two tasks at the same time: one blinking an LED and one printing a message.
 
 ### Evidence (Console Output)
 ![Lab 1](../img/lab1.png)
-
+**Figure 1.** Console output showing Lab 1 execution.
 
 ### Evidence (LED Blinking)
 <iframe width="560" height="315"
@@ -57,6 +57,8 @@ src="https://www.youtube.com/embed/tD9PnNb1_j4"
 title="Lab 1 LED Blinking"
 frameborder="0"
 allowfullscreen></iframe>
+
+**Video 1.** LED blinking behavior for Lab 1.
 
 ---
 
@@ -123,7 +125,7 @@ NO, because it doesn’t affect the blink time of the LED. Both tasks use `vTask
 
 ### Evidence
 ![Priority Experiment](../img/lab1prioridad.png)
-
+**Figure 2.** Priority experiment output: hello_task priority changed from 5 to 2.
 ---
 
 ### Exercise 2 — Starvation Demo
@@ -143,6 +145,8 @@ src="https://www.youtube.com/embed/iBQAt2u0nZ4"
 title="Lab 1 Starvation Evidence"
 frameborder="0"
 allowfullscreen></iframe>
+
+**Video 2.** Starvation experiment: hello_task delay removed to observe CPU usage effects.
 
 ---
 
@@ -173,7 +177,7 @@ Send integers from a producer task to a consumer task using a FreeRTOS queue.
 
 ### Evidence
 ![Lab 2](../img/lab2.png)
-
+**Figure 3.** Console output showing producer_task and consumer_task using a queue.
 ---
 
 ## 6) Code
@@ -257,6 +261,8 @@ title="Lab 2 Evidence - Fast Producer"
 frameborder="0"
 allowfullscreen></iframe>
 
+**Video 3.** Producer speed increased (20 ms delay), showing that the queue does not overflow.
+
 ---
 
 ### Exercise 3 — Increase the queue length 5 → 20
@@ -275,6 +281,8 @@ title="Lab 2 Evidence - Queue Length 20"
 frameborder="0"
 allowfullscreen></iframe>
 
+**Video 4.** Queue length increased to 20, allowing more buffering before overflow.
+
 ---
 
 ### Exercise 5 — Make the consumer “slow”: after a successful receive, add:
@@ -292,6 +300,8 @@ src="https://www.youtube.com/embed/_d22Bcnq1Tc"
 title="Lab 2 Evidence - Slow Consumer"
 frameborder="0"
 allowfullscreen></iframe>
+
+**Video 5.** Consumer slowed down (300 ms delay), showing buffering and possible backlog in the queue.
 
 ---
 
@@ -366,6 +376,7 @@ The counter may be faulty because both tasks read the same value and overwrite i
 
 ### Evidence
 ![Part A Evidence](../img/PARTa.png)
+**Figure 4.** Race condition evidence: shared_counter increment without mutex protection.
 
 ---
 
@@ -433,6 +444,7 @@ Yes, sometimes the counter increases slower than expected or skips values.
 
 ### Evidence
 ![Exercise 1 Evidence](../img/ejercicio1.png)
+**Figure 5.** Evidence after removing the mutex: counter behavior becomes inconsistent.
 
 ---
 
@@ -446,6 +458,7 @@ TaskA (priority 6) will run more often than TaskB (priority 4). TaskA will usual
 
 ### Evidence
 ![Exercise 2 Evidence](../img/ejercicio2.png)
+**Figure 6.** Priority experiment: TaskA (priority 6) runs more often than TaskB (priority 4).
 
 ---
 
