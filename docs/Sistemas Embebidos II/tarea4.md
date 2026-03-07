@@ -60,9 +60,29 @@ Implement an ESP32-C6 HTTP server (GET-only UI) to control two LEDs, read a butt
 
 ## 4) Data, Tests & Evidence
 
-## Videos (Evidence)
+### Wi-Fi Scan Results
 
- 
+![WiFi Scan Results](../img/wifi_scan_results.png)
+
+**Figure 1.** Serial terminal showing the Wi-Fi scan results table with multiple access points detected. The strongest RSSI detected was **-57 dBm** on channel **11**, with networks including **IBERO**, **IBERO_CORTESIA**, and **IBERO_INVITADOS**.
+
+---
+
+### Successful Wi-Fi Connection
+
+![WiFi Connection Success](../img/wifi_connection_success.png)
+
+**Figure 2.** Serial terminal showing a successful Wi-Fi connection to the network **"iPhone de Carlos"**, including the assigned IP address **172.20.10.2** and confirmation that the device is ready to start the HTTP server.
+
+---
+
+### Failed Wi-Fi Connection Attempt
+
+![WiFi Connection Failure](../img/wifi_connection_failure.png)
+
+**Figure 3.** Serial terminal showing an intentional failed connection attempt with multiple retry attempts and the final message **"Failed to connect after 10 retries."**
+
+## Videos (Evidence)
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/WE9whLGg0yE"
@@ -99,24 +119,66 @@ allowfullscreen></iframe>
 
 ---
 
-## 5) Analysis
+# 5) Lab Questions and Answers
+
+## Lab 1 — Wi-Fi Scan
+
+**What is the SSID of the strongest AP detected in your scan?**
+
+IBERO (tie with IBERO_CORTESIA and IBERO_INVITADOS)
+
+**What is the RSSI value of that AP?**
+
+-57 dBm
+
+**What authentication mode does that AP use?**
+
+WPA2-ENT
+
+**What channel is that AP operating on?**
+
+Channel 11
+
+**Which channel had the most APs detected in your scan?**
+
+Channel 1
+
+---
+
+## Lab 2 — Wi-Fi STA + Reconnect
+
+**What event indicates “Wi-Fi driver started and is ready to connect”?**
+
+WIFI_EVENT_STA_START
+
+**What event indicates “network stack has an IP and the device is online”?**
+
+IP_EVENT_STA_GOT_IP
+
+**What is the assigned IP address?**
+
+172.20.10.2
+
+**How many retries occurred before success or failure?**
+
+10 retries before failure.
+
+**In your logs, which happened first: WIFI_EVENT_STA_START or IP_EVENT_STA_GOT_IP? Why?**
+
+WIFI_EVENT_STA_START happened first because the Wi-Fi station must start before the device can connect and obtain an IP address.
+
+---
+
+## 6) Analysis
 
 ### How the system works (GET-only UI)
 - The ESP32 firmware runs the HTTP server and GPIO/PWM logic.
 - The browser loads `GET /` and the page refreshes automatically every 1 second using `<meta http-equiv='refresh' content='1'>`.
 - LED endpoints update GPIO outputs, and `/motor` updates direction + PWM duty.
 
-### Notes / Limitations
-- Because it is **GET-only**, changing motor speed uses URL query parameters (`/motor?speed=...`).
-- Auto-refresh is simple but reloads the whole page; a JSON API with fetch() would be more efficient.
-
-### Improvements
-- Replace full refresh with `fetch()` + JSON endpoints (button/led/motor status).
-- Add input validation responses (show current state on confirmation page).
-
 ---
 
-## 6) Code
+## 7) Code
 
 ### Full firmware (single file)
 > `main/main.c`
@@ -589,7 +651,7 @@ void app_main(void)
 
 ---
 
-## 7) Files & Media
+## 8) Files & Media
 
 - Firmware: `main/main.c`
 - Videos (YouTube):
