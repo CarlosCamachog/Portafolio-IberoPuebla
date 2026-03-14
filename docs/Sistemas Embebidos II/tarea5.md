@@ -73,7 +73,7 @@ Implement an ESP32-based system with Wi-Fi connectivity and MQTT communication t
 
 ### MQTT Connection Established
 
-![MQTT Connection](../img/mqtt_connection.png)
+![MQTT Connection](../img/mqtt_connection.jpeg)
 
 **Figure 1.** Serial terminal showing the ESP32 successfully connected to Wi-Fi and later connected to the MQTT broker. This confirms that the board is ready to publish telemetry and receive remote control commands.
 
@@ -81,7 +81,7 @@ Implement an ESP32-based system with Wi-Fi connectivity and MQTT communication t
 
 ### Telemetry Publishing
 
-![Telemetry Publishing](../img/mqtt_telemetry.png)
+![Telemetry Publishing](../img/mqtt_telemetry.jpeg)
 
 **Figure 2.** Serial output showing temperature and humidity values obtained from the potentiometers and published through the telemetry topic. The values change according to the analog position of each potentiometer.
 
@@ -89,7 +89,7 @@ Implement an ESP32-based system with Wi-Fi connectivity and MQTT communication t
 
 ### Motor Control from MQTT Explorer
 
-![Motor Control MQTT Explorer](../img/mqtt_motor_control.png)
+![Motor Control MQTT Explorer](../img/mqtt_motor_control.jpeg)
 
 **Figure 3.** MQTT Explorer used to send commands to the ESP32 for turning the motor ON/OFF and updating its speed. This demonstrates successful bidirectional MQTT communication.
 
@@ -98,7 +98,7 @@ Implement an ESP32-based system with Wi-Fi connectivity and MQTT communication t
 ## Videos (Evidence)
 
 <iframe width="560" height="315"
-src=""
+src="https://www.youtube.com/embed/Q5yZMfOIq7o"
 title="MQTT potentiometers and motor demo"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -108,62 +108,7 @@ allowfullscreen></iframe>
 
 ---
 
-# 5) Lab Questions and Answers
-
-## MQTT Communication
-
-**What communication model does MQTT use?**
-
-MQTT uses the **publish/subscribe** communication model.
-
-**What is the function of the MQTT broker?**
-
-The broker receives messages from publishers and distributes them to the clients subscribed to the corresponding topics.
-
-**Which topic was used for telemetry?**
-
-`ibero/ei2/CAMACHO/esp32_mqtt/telemetry`
-
-**Which topics were used for motor control?**
-
-- `ibero/cmd/motor`
-- `ibero/cmd/speed`
-
-**What message turns the motor ON?**
-
-`ON`
-
-**What message turns the motor OFF?**
-
-`OFF`
-
-**What speed range is allowed by the program?**
-
-From `0` to `255`.
-
-**Why were potentiometers used in this practice?**
-
-They were used to simulate sensor values for temperature and humidity without requiring real environmental sensors.
-
----
-
-## Wi-Fi and Events
-
-**What event indicates that the Wi-Fi station started?**
-
-`WIFI_EVENT_STA_START`
-
-**What event indicates that the ESP32 obtained an IP address?**
-
-`IP_EVENT_STA_GOT_IP`
-
-**Why is an EventGroup used in this program?**
-
-It is used to block execution until the ESP32 successfully connects to Wi-Fi and gets an IP address.
-
----
-
-## 6) Analysis
+## 5) Analysis
 
 ### How the system works (MQTT-based control)
 - The ESP32 connects to a Wi-Fi network in STA mode.
@@ -176,12 +121,9 @@ It is used to block execution until the ESP32 successfully connects to Wi-Fi and
   - one topic updates speed
 - This architecture is simple, modular, and useful for IoT-style monitoring and remote control systems.
 
-### Why this practice is important
-This lab demonstrates a basic Internet of Things workflow: a device acquires data from inputs, publishes information to the network, and receives commands from an external client. It also shows how MQTT simplifies communication between embedded systems and user interfaces, making it suitable for scalable monitoring and automation projects.
-
 ---
 
-## 7) Code
+## 6) Code
 
 ### Full firmware (single file)
 > `main/main.c`
